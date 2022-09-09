@@ -1,11 +1,7 @@
-num = 0
-sum = 0
+def multiples_of_3_or_5(limit):
+    for num in range(1, limit):
+        if not num % 3 or not num % 5:
+            yield num
 
-while num < 1000:
-    if num % 3 == 0:
-        sum += num
-    elif num % 5 == 0:
-        sum += num
-    num += 1
 
-print(sum)
+print(sum(multiples_of_3_or_5(1000)))

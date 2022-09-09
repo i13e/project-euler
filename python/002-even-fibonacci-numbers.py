@@ -1,9 +1,21 @@
-# fibonnaci sequence
-first = 1
-second = 2
-sum = 0
-while first <= 4000000:
-    if second % 2 == 0:
-        sum += second
-    first, second = second, first + second
-print(sum)
+def fib():
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a + b
+
+
+def even(seq):
+    for i in seq:
+        if i % 2 == 0:
+            yield i
+
+
+def under(seq, limit):
+    for i in seq:
+        if i > limit:
+            break
+        yield i
+
+
+print(sum(under(even(fib()), 4000000)))
