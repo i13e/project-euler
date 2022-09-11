@@ -1,7 +1,11 @@
-def multiples_of_3_or_5(limit):
+def multiplesOf(vars: list[int], limit: int) -> int:
+    res = 0
     for num in range(1, limit):
-        if not num % 3 or not num % 5:
-            yield num
+        for multiple in vars:
+            if num % multiple == 0:
+                res += num
+                break
+    return res
 
 
-print(sum(multiples_of_3_or_5(1000)))
+print(multiplesOf([3, 5], 1000))
