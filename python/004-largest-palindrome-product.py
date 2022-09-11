@@ -4,13 +4,11 @@ def palindromeProduct(min, max):
         for y in range(max, min, -1):
             prod = tmp = x * y
             # Numerical solution
-            if tmp % 10 == 0:
-                continue
             rev = 0
-            while tmp > rev:
+            while tmp > 0:
                 rev = rev * 10 + tmp % 10
-                tmp = tmp // 10
-            if (tmp == rev or tmp == rev // 10) and prod > res:
+                tmp //= 10
+            if (prod == rev or prod == rev // 10) and prod > res:
                 res = prod
                 break
             # String solution
