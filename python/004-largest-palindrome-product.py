@@ -2,20 +2,19 @@ def palindromeProduct(min, max):
     res = 0
     for x in range(max, min, -1):
         for y in range(max, min, -1):
-            prod = tmp = x * y
             # Numerical solution
-            rev = 0
-            while tmp > 0:
-                rev = rev * 10 + tmp % 10
-                tmp //= 10
-            if (prod == rev or prod == rev // 10) and prod > res:
-                res = prod
+            prod, rev = x * y, 0
+            while prod > 0:
+                rev = rev * 10 + prod % 10
+                prod //= 10
+            if (x * y == rev or x * y == rev // 10) and x * y > res:
+                res = x * y
                 break
             # String solution
-            # if str(prod) == str(prod)[::-1] and prod > res:
+            # if str(x * y) == str(x * y)[::-1] and x * y > res:
             #     res = prod
             #     break
-            elif prod < res:
+            elif x * y < res:
                 break
     return res
 
