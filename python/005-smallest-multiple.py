@@ -4,13 +4,11 @@ def smallestMultiple(target):
         # Remove composite numbers
         if res % num == 0:
             continue
-
-        # Simplify prime squares
-        for prime in range(2, int(num ** (0.5)) + 1):
-            while num % prime == 0:
-                if num == prime:
-                    break
-                num //= prime
+        # Reduce perfect powers into primes
+        for prime in range(2, int(num**0.5) + 1):
+            if num % prime == 0:
+                num = prime
+                break
         # Multiply result by the remaining prime
         res *= num
     return res

@@ -1,5 +1,5 @@
 def primeFactor(target):
-    for num in range(2, int(target ** (0.5)) + 1):
+    for num in range(2, int(target**0.5) + 1):
         while target % num == 0:
             # Print only the largest prime factor
             if target == num:
