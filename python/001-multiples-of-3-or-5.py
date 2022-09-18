@@ -1,9 +1,15 @@
-def multiplesOf(vars, limit: int):
-    for num in range(1, limit):
-        for multiple in vars:
-            if num % multiple == 0:
-                yield num
-                break
+class Solution:
+    def multiplesOf(self, nums: list, limit: int):
+        return set([i for i in range(limit) if any([not i % n for n in nums])])
+
+    def test(self):
+        assert sum(self.multiplesOf([3, 5], 1000)) == 233168
 
 
-print(sum(multiplesOf([3, 5], 1000)))
+Solution().test()
+
+factors = input("Enter factors: ").split()
+limit = int(input("Enter limit: "))
+
+# print(list(Solution().multiplesOf([int(f) for f in factors], limit)))
+print("Sum:", sum(Solution().multiplesOf([int(f) for f in factors], limit)))
