@@ -1,5 +1,4 @@
-def palindromeProduct(min, max):
-    res = 0
+def palindromeProduct(min: int, max: int, res=0):
     for x in range(max, min, -1):
         for y in range(max, min, -1):
             # Numerical solution

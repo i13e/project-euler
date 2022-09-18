@@ -1,13 +1,14 @@
-def primeFactor(target):
-    for num in range(2, int(target**0.5) + 1):
-        while target % num == 0:
-            # Print only the largest prime factor
-            if target == num:
-                return num
-            target //= num
+class Solution:
+    def primeFactor(self, target: int):
+        for num in range(2, int(target**0.5) + 1):
+            while target % num == 0:
+                # Print only the largest prime factor
+                if target == num:
+                    return num
+                target //= num
 
-    # If loop ends, target is prime
-    return target
+        # If loop ends, target is prime
+        return target
 
 
-print(primeFactor(600851475143))
+print(Solution().primeFactor(600851475143))

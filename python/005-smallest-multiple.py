@@ -1,5 +1,4 @@
-def smallestMultiple(target):
-    res = 1
+def smallestMultiple(target: int, res=1):
     for num in range(2, target + 1):
         # Remove composite numbers
         if res % num == 0:
