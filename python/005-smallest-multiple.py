@@ -1,16 +1,15 @@
-def smallestMultiple(target: int, res=1):
-    if not target:
-        return 0
-    primes = [1] * (target + 1)
-    primes[0] = primes[1] = 0
-    for n in range(2, target + 1):
-        if primes[n]:
-            primes[n**2 : target + 1 : n] = [0] * (1 + (target - n**2) // n)
-            power = 2
-            while n ** power in range(target + 1):
-                power += 1
-            res *= n ** (power - 1)
-    return res
+def smallestMultiple(n: int, res=1):
+    n += 1  # this range is inclusive
+    sieve = [0, 0] + [1] * (n - 2)
+    for i in range(n):
+        if sieve[i]:
+            sieve[i**2 :: i] = [0] * len(sieve[i**2 :: i])
+            # sieve[i**2 :: i] = [0] * ((n - i**2 - 1) // i + 1)
+            power = i
+            while i * power < n:
+                power *= i
+            res *= power
+    return [0, res][n > 1]
 
 
 print(smallestMultiple(20))
