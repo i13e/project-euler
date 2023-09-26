@@ -7,7 +7,7 @@ class Solution:
                 while prod > 0:
                     rev = rev * 10 + prod % 10
                     prod //= 10
-                if (x * y == rev or x * y == rev // 10) and x * y > res:
+                if x * y == rev and x * y > res:
                     res = x * y
                     break
                 # String solution
@@ -19,4 +19,4 @@ class Solution:
         return res
 
 
-print(Solution().palindromeProduct(100, 1000))
+print(Solution().palindromeProduct(1000, 10000))
