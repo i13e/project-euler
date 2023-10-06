@@ -18,7 +18,7 @@ website](https://projecteuler.net/) and trying out some problems yourself.
 
 To get started with this repository, simply clone it to your local machine:
 
-```
+```bash
 git clone https://github.com/i13e/project-euler.git
 ```
 
