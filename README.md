@@ -53,10 +53,3 @@ repositories and websites to explore:
 
 These resources can provide additional insights, alternative solutions, and different programming
 language implementations.
-
-## Contributing
-
-If you'd like to contribute your own solutions or improvements to existing ones, please follow the
-contribution guidelines outlined in the repository.
-Contributions are greatly appreciated and can help make this resource even more valuable to the
-Project Euler community.
