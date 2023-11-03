@@ -1,8 +1,12 @@
-# project-euler
+# Project Euler Solutions
 
 This repository contains my solutions to various Project Euler problems. Project Euler is a
 collection of challenging mathematical/computer programming problems that often require creative
 problem-solving techniques.
+
+My python solutions are managed with a tool I wrote called [euler](https://github.com/i13e/euler)
+to fetch problem descriptions, generate files, and test if a solution is valid. Check out the repo
+for more info.
 
 ## About Project Euler
 
